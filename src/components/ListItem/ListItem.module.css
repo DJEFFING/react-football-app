@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 24px;
+    cursor: pointer;
+}
+
+.thumbnail {
+    /* Style pour l'image miniature du match */
+    width: 180px;
+    /* Largeur fixe pour la miniature */
+    height: 120px;
+    /* Hauteur fixe */
+    object-fit: cover;
+    /* Assure que l'image couvre l'espace sans déformation */
+    flex-shrink: 0;
+    /* Empêche l'image de rétrécir */
+}
+
+.info {
+    /* Conteneur pour toutes les informations textuelles */
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Espace les éléments verticalement */
+    flex-grow: 1;
+    /* Permet au bloc d'informations de prendre l'espace restant */
+}
+
+.title {
+    /* Titre du match */
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.competition {
+    /* Nom de la compétition */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.date {
+    /* Date et heure du match */
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.links {
+    /* Conteneur pour les liens "Voir le match" et "Voir la compétition" */
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    /* Espace entre les liens */
+}
+
+.links a {
+    /* Style des liens */
+    text-decoration: none;
+    color: #007bff;
+    padding: 6px 12px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.videoEmbed {
+    /* Style pour le conteneur de la vidéo embarquée */
+    margin-top: 15px;
+    /* La taille de l'iframe est généralement gérée par le style inline de Scorebat,
+       mais vous pouvez ajouter des marges ou des bordures si vous le souhaitez. */
+}
