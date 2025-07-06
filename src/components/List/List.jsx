@@ -30,9 +30,9 @@ export const List = ({getMatchList}) =>{
     if(matchList && matchList.length>0){
         return (
             <div className="box">
-            {matchList && matchList.length>0 && (
-            <ul className={styles.container}> {matchListDisplay} </ul>
-            )}
+                {matchList && matchList.length>0 && (
+                <ul className={`${ styles.container } row`}> {matchListDisplay} </ul>
+                )}
             </div>  
         );
     }

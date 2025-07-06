@@ -24,30 +24,20 @@ export const ListItem = ({ match }) => {
   });
 
   return (
-    <li className={styles.container}>
-      <img src={thumbnail} alt={title} className={styles.thumbnail} />
-      <div className={styles.info}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.competition}>{competition}</p>
-        <p className={styles.date}>{formattedDate}</p>
-        <div className={styles.links}>
-          <a href={matchviewUrl} target="_blank" rel="noopener noreferrer">
-            Voir le match
-          </a>
-          <a href={competitionUrl} target="_blank" rel="noopener noreferrer">
-            Voir la compétition
+    // <li className="col-lg-3 ">
+      <li className={`card col-lg-3 col-xl-3`} style={{ width:"24rem"}}>
+        <img src={thumbnail} className="card-img-top" alt="image.jpeg" />
+        <div className="card-body">
+          <h5 className="card-title text-white">{title}</h5>
+          <p className="card-text text-white">
+            {competition}
+          </p>
+          <span className="text-white">{formattedDate}</span><br />
+          <a href="#" className="btn btn-primary">
+            voir +
           </a>
         </div>
-        {/* Afficher les vidéos. On vérifie si 'videos' existe et contient des éléments. */}
-        {videos && videos.length > 0 && (
-          // ATTENTION : dangerouslySetInnerHTML est à utiliser avec prudence !
-          // Il insère du HTML brut. Assurez-vous que la source est fiable pour éviter les failles de sécurité (XSS).
-          <div
-            className={styles.videoEmbed}
-            dangerouslySetInnerHTML={{ __html: videos[0].embed }}
-          />
-        )}
-      </div>
-    </li>
+      </li>
+    // </li>
   );
 };
