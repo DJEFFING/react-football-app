@@ -1,12 +1,53 @@
-# React + Vite
+# Application Web de Matchs en Direct  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description  
+Ce projet est une application web développée avec React.js qui permet de suivre les matchs en direct. Voici les principales fonctionnalités :  
+- **Listing des matchs de la journée** : Affichage des matchs programmés pour la journée.  
+- **Détails des matchs** : Possibilité d'afficher les informations détaillées sur un match spécifique.  
+- **Regarder les matchs en live** : Diffusion en direct des matchs en cours.  
+- **Informations sur la compétition** : Affichage des détails sur la compétition en cours.  
+- **Rediffusion des matchs** : Accès aux matchs déjà joués pour les revoir.  
 
-Currently, two official plugins are available:
+## Technologies utilisées  
+- **React.js** : Framework JavaScript pour la création d'interfaces utilisateur.  
+- **Node.js** : Version utilisée : 22.17.0.  
+- **Vite** : Outil de build rapide pour les projets web.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation et démarrage du projet en local  
 
-## Expanding the ESLint configuration
+### Prérequis  
+- Node.js (version 22.17.0 ou supérieure).  
+- npm (installé avec Node.js).  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Étapes  
+1. Clonez le dépôt du projet :  
+    ```bash  
+    git clone <URL_DU_DEPOT>  
+    ```  
+2. Accédez au dossier du projet :  
+    ```bash  
+    cd app-tp1-react-jeff  
+    ```  
+3. Installez les dépendances :  
+    ```bash  
+    npm install  
+    ```  
+4. Démarrez le serveur de développement :  
+    ```bash  
+    npm run dev  
+    ```  
+5. Ouvrez votre navigateur et accédez à l'URL affichée (par défaut : `http://localhost:3000`).  
+
+## Structure du projet  
+- **src/** : Contient le code source de l'application.  
+- **public/** : Contient les fichiers statiques.  
+- **package.json** : Liste des dépendances et scripts du projet.  
+
+## Contribution  
+Les contributions sont les bienvenues. Veuillez soumettre une pull request ou ouvrir une issue pour signaler un problème ou proposer une amélioration.  
+
+## Licence  
+Ce projet est sous licence [Nom de la licence].  
+
+## Remarques  
+Si vous rencontrez des problèmes lors de l'installation ou du démarrage, assurez-vous que votre version de Node.js est compatible et que toutes les dépendances sont correctement installées.  
