@@ -22,7 +22,7 @@ Ce projet est une application web développée avec React.js qui permet de suivr
 ### Étapes  
 1. Clonez le dépôt du projet :  
     ```bash  
-    git clone <URL_DU_DEPOT>  
+    git clone https://github.com/DJEFFING/react-football-app.git 
     ```  
 2. Accédez au dossier du projet :  
     ```bash  
