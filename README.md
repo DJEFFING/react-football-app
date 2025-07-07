@@ -26,7 +26,7 @@ Ce projet est une application web développée avec React.js qui permet de suivr
     ```  
 2. Accédez au dossier du projet :  
     ```bash  
-    cd app-tp1-react-jeff  
+    cd react-football-app  
     ```  
 3. Installez les dépendances :  
     ```bash  
