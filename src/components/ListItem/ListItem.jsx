@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./ListItem.module.css";
 // import { Match } from "../../types/match.tsx";
 import React from "react";
@@ -24,20 +25,18 @@ export const ListItem = ({ match }) => {
   });
 
   return (
-    // <li className="col-lg-3 ">
-      <li className={`card col-lg-3 col-xl-3`} style={{ width:"24rem"}}>
-        <img src={thumbnail} className="card-img-top" alt="image.jpeg" />
-        <div className="card-body">
-          <h5 className="card-title text-white">{title}</h5>
-          <p className="card-text text-white">
-            {competition}
-          </p>
-          <span className="text-white">{formattedDate}</span><br />
-          <a href="#" className="btn btn-primary">
-            voir +
-          </a>
-        </div>
-      </li>
+    <li className={`card col-lg-3 col-xl-3`} style={{ width: "24rem" }}>
+      <img src={thumbnail} className="card-img-top" alt="image.jpeg" />
+      <div className="card-body">
+        <h5 className="card-title text-white">{title}</h5>
+        <p className="card-text text-white">{competition}</p>
+        <span className="text-white">{formattedDate}</span>
+        <br />
+        <Link to={`/match/${videos[0].id}`} href={matchviewUrl} className="btn btn-primary">
+          voir +
+        </Link>
+      </div>
+    </li>
     // </li>
   );
 };

@@ -21,7 +21,7 @@ export const List = ({getMatchList}) =>{
     },[getMatchList])
 
     const matchListDisplay = matchList.map((match) => (
-        <ListItem key={match.id} match={match} />
+        <ListItem match={match} />
     ));
 
 
