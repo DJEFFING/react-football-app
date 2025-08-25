@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Header.module.css'
-import reactLocgo from "../../assets/react.svg";
+// import reactLocgo from "../../assets/react.svg";
 import flaskScoreLogo from "../../assets/logo-faskScrore2.png";
 
 export const Header = () =>{

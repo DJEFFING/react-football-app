@@ -13,6 +13,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body{
+  background-color: #141414;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.card{
+  background-color: #000000;
+}
+
 
 
 #root {
