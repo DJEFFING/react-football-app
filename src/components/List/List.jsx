@@ -1,39 +1,35 @@
-import { useEffect, useState } from "react";
 import { ListItem } from "../ListItem/ListItem";
 import styles from "./List.module.css";
 
-export const List = ({getMatchList}) =>{
-    const [matchList, setMatchList]=useState([]);
+export const List = ({ itemList, isLoading, error }) => {
+  // On ne gère plus la logique de fetching ici.
+  // Ce composant est "dumb" et ne fait qu'afficher ce qu'il reçoit en props.
 
-    useEffect( ()=>{
-        const fetchMatchList = async () =>{
-            try {
-                const result = await getMatchList(); // Attendre que la fonction retourne "result"
-                setMatchList(result.response); // Stocker "result" dans l'état local
-                // console.log("La liste de tous les matchs : ", result);
-            } catch (err) {
-                console.error("Une erreur s'est produite lors de la récupération des matchs :", err.message);
-            }
-        };
-        
-        fetchMatchList();
+  if (isLoading) {
+    return (
+      <div>
+        <div className="spinner-border m-5" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
-    },[getMatchList])
+  if (error) {
+    return <p style={{ color: "red" }}>{error}</p>;
+  }
 
-    const matchListDisplay = matchList.map((match) => (
-        <ListItem match={match} />
-    ));
+  if (!itemList || itemList.length === 0) {
+    return <p>Aucun match trouvé.</p>;
+  }
 
+  const matchListDisplay = itemList.map((match, index) => (
+    <ListItem key={index} match={match} />
+  ));
 
-
-
-    if(matchList && matchList.length>0){
-        return (
-            <div className="box">
-                {matchList && matchList.length>0 && (
-                <ul className={`${ styles.container } row`}> {matchListDisplay} </ul>
-                )}
-            </div>  
-        );
-    }
-}
+  return (
+    <div className="box">
+      <ul className={`${styles.container} row`}>{matchListDisplay}</ul>
+    </div>
+  );
+};

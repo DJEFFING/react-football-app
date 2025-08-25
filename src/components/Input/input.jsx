@@ -1,43 +1,33 @@
-import { useEffect, useState } from 'react';
-import styles from './Input.module.css'
+import { useState } from "react";
+import styles from "./Input.module.css";
 
-export const Input = ({searchQuery}) =>{
-    const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+export const Input = ({ SearchItemByName }) => {
+  const [searchQuery, SetSearchQuery] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
+  const handleInputChange = (e) => {
+    SetSearchQuery(e.target.value);
+    SearchItemByName(searchQuery);
+    console.log(searchQuery);
+  };
 
-      try {
-        const response = await fetch(`https://example.com/api/search?query=${searchQuery}`);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setData(result);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const handleSeachItem = (e)=>{
+    e.preventDefault();
+    // if(searchQuery.trim()){
+      SearchItemByName(searchQuery);
+      SetSearchQuery("");
+    // }
+    
+  };
 
-    if (searchQuery) {
-      fetchData();
-    }
-  }, [searchQuery]);
-
-    return(
-        <div className={`box ${styles.element}`}>
-            <h2 className={styles.title}> Recherchez queleque chose ici </h2>
-            <form className={styles.container} action="">
-                <input type="text" className={styles.input} placeholder='Recherche' />
-                <button type='submit' className='button-primary'>Recherche</button>
-            </form>
-        </div>
-    );
-}
-
+  return (
+    <div className={`box ${styles.element}`}>
+      <h2 className={styles.title}> Recherchez queleque chose ici </h2>
+      <form className={styles.container} onSubmit={handleSeachItem}>
+        <input type="text" className={styles.input} placeholder="Recherche" onChange={handleInputChange} />
+        <button type="submit" className="button-primary">
+          Recherche
+        </button>
+      </form>
+    </div>
+  );
+};

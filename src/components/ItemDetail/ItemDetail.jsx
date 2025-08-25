@@ -27,15 +27,15 @@ export const ItemDetail = ({ getMatchList }) => {
           err
         );
         setError("Erreur lors du chargement des détails du match.");
-    } finally {
+      } finally {
         setLoading(false); // Le chargement est terminé, qu'il y ait eu succès ou erreur
-    }
+      }
     };
 
     getMatchById();
   }, [getMatchList, id]);
 
-// --- RENDU CONDITIONNEL : C'EST LA CLÉ POUR ÉVITER L'ERREUR ---
+  // --- RENDU CONDITIONNEL : C'EST LA CLÉ POUR ÉVITER L'ERREUR ---
 
   // 1. Afficher un état de chargement
   if (loading) {
@@ -87,41 +87,66 @@ export const ItemDetail = ({ getMatchList }) => {
       </button>
 
       <h1 className="text-white">{match.title}</h1>
-      <p className="text-white"><strong>Compétition :</strong> {match.competition}</p>
-      <p className="text-white"><strong>Date :</strong> {formattedDate}</p>
+      <p className="text-white">
+        <strong>Compétition :</strong> {match.competition}
+      </p>
+      <p className="text-white">
+        <strong>Date :</strong> {formattedDate}
+      </p>
 
       {/* Affichez la vidéo et autres détails ici */}
       {match.videos && match.videos.length > 0 && (
         <div className="video-player-wrapper">
           <div dangerouslySetInnerHTML={{ __html: match.videos[0].embed }} />
-          <p className="text-white mt-2">*{match.videos[0].title}</p>
+          {/* <p className="text-white mt-2">*{match.videos[0].title}</p> */}
         </div>
       )}
 
       {/* Liens supplémentaires et boutons */}
-      <div className="d-flex gap-3 mt-4">
+
+      <div className="d-flex mt-4 row">
         {match.matchviewUrl && (
-          <a href={match.matchviewUrl} target="_blank" rel="noopener noreferrer" className="btn btn-info">
-            Voir le match sur Scorebat
-          </a>
+          <div className=" col-lg-6 col-6">
+            <a
+              href={match.matchviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-info"
+            >
+              Voir le match sur Scorebat
+            </a>
+          </div>
         )}
 
         {match.competitionUrl && (
-          <a href={match.competitionUrl} target="_blank" rel="noopener noreferrer" className="btn btn-info">
-            Détails de la compétition
-          </a>
+          <div className=" col-lg-6 col-6">
+            <a
+              href={match.competitionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-info"
+            >
+              Détails de la compétition
+            </a>
+          </div>
         )}
       </div>
-      
-      <div className="d-flex gap-3 mt-4">
-        <button className="btn btn-success" onClick={() => alert("Ajouter aux favoris !")}>
-          Ajouter aux favoris
-        </button>
 
-        <button className="btn btn-warning" onClick={() => alert("Partager !")}>
-          Partager
-        </button>
-      </div>
+      {/* <div className="d-flex gap-3 mt-4 col-lg-6">
+          <button
+            className="btn btn-success"
+            onClick={() => alert("Ajouter aux favoris !")}
+          >
+            Ajouter aux favoris
+          </button>
+
+          <button
+            className="btn btn-warning"
+            onClick={() => alert("Partager !")}
+          >
+            Partager
+          </button>
+        </div> */}
     </div>
   );
 };
