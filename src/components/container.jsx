@@ -43,9 +43,9 @@ export const Container = () => {
     setIsLoading(true); // Activation du chargement
     if (name.trim() === "") {
       // Si la recherche est vide, on retourne la liste complète.
-      console.log("originalItemList : ",originalItemList);
-      setIsLoading(false); //deactivation du chargement
+      
       SetItemList(originalItemList);
+      setIsLoading(false); //deactivation du chargement
       return;
     }
 
@@ -54,7 +54,7 @@ export const Container = () => {
       const searchTerm = name.toLowerCase();
       return itemTitle.includes(searchTerm);
     });
-    setIsLoading(false);
+    setIsLoading(false); //deactivation du chargement
     SetItemList(filteredList);
     // On n'a plus besoin d'un état "isSeach" si on gère la liste de cette manière.
   };

@@ -7,7 +7,7 @@ export const Input = ({ SearchItemByName }) => {
   const handleInputChange = (e) => {
     SetSearchQuery(e.target.value);
     SearchItemByName(searchQuery);
-    console.log(searchQuery);
+    
   };
 
   const handleSeachItem = (e)=>{
