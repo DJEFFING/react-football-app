@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import styles from "./ListItem.module.css";
 // import { Match } from "../../types/match.tsx";
 import React from "react";
 
@@ -9,7 +8,6 @@ export const ListItem = ({ match }) => {
     title,
     competition,
     matchviewUrl,
-    competitionUrl,
     thumbnail,
     date,
     videos,

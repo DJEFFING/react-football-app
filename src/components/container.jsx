@@ -19,34 +19,6 @@ export const Container = () => {
         }
     };
 
-    // const competitionList = () =>{
-    //     return [
-    //         {
-    //             name:"Ligue 1",
-    //             id:"france-ligue-1"
-    //         },
-
-    //         {
-    //             name:"Bundesliga",
-    //             id : "germany-bundesliga"
-    //         },
-
-    //         {
-    //             name: "premier league",
-    //             id : "england-premier-league"
-    //         },
-    //         {
-    //             name: "Serie A",
-    //             id : "italy-serie-a"
-    //         },
-            
-    //         {
-    //             name :"la liga",
-    //             id : "spain-la-liga"
-    //         }
-    //     ]
-    // }
-
   return (
     <main>
       <Header />
