@@ -21,7 +21,7 @@ export const Input = ({ SearchItemByName }) => {
 
   return (
     <div className={`box ${styles.element}`}>
-      <h2 className={styles.title}> Recherchez queleque chose ici </h2>
+      <h2 className={styles.title}> Recherche une équipe </h2>
       <form className={styles.container} onSubmit={handleSeachItem}>
         <input type="text" className={styles.input} placeholder="Recherche" onChange={handleInputChange} />
         <button type="submit" className="button-primary">

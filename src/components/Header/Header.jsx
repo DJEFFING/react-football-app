@@ -1,16 +1,17 @@
 import React from "react";
 import styles from './Header.module.css'
 import reactLocgo from "../../assets/react.svg";
+import flaskScoreLogo from "../../assets/logo-faskScrore2.png";
 
 export const Header = () =>{
     return(
         <div className={styles.container}>
             <div className={styles.titleContainer}>
-                <img src={reactLocgo} alt="logo" width={50} height={50}/>
+                <img src={flaskScoreLogo} alt="logo" width={70} height={60}/>
                 <div>
-                    <h1>Devoir de react TP1</h1>
+                    <h1>FlashScore +</h1>
                     <div className="color-gray">
-                        <code>Je ne connais pas encore le titre de mon projet</code>
+                        <code>Revivez chaque but, chaque action, instantanément</code>
                     </div>
                 </div>
             </div>
